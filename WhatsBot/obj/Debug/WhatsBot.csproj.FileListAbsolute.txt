@@ -1,0 +1,16 @@
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\obj\Debug\WhatsBot.csprojAssemblyReference.cache
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\obj\Debug\ZapBot.Form1.resources
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\obj\Debug\WhatsBot.Properties.Resources.resources
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\obj\Debug\WhatsBot.csproj.GenerateResource.cache
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\obj\Debug\WhatsBot.csproj.CoreCompileInputs.cache
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\bin\Debug\selenium-manager\linux\selenium-manager
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\bin\Debug\selenium-manager\macos\selenium-manager
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\bin\Debug\selenium-manager\windows\selenium-manager.exe
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\bin\Debug\WhatsBot.exe.config
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\bin\Debug\WhatsBot.exe
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\bin\Debug\WhatsBot.pdb
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\bin\Debug\WebDriver.dll
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\bin\Debug\WebDriver.Support.dll
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\obj\Debug\WhatsBot.csproj.CopyComplete
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\obj\Debug\WhatsBot.exe
+C:\Users\gximenes\Desktop\WhatsBot\WhatsBot\WhatsBot\obj\Debug\WhatsBot.pdb
