@@ -24,7 +24,7 @@ namespace ZapBot
 
         {
             InitializeComponent();
-            driver = new EdgeDriver("Path to Chrome Driver");
+            driver = new EdgeDriver();
             openPage();
 
         }
@@ -33,6 +33,7 @@ namespace ZapBot
         {
             driver.Url = "https://web.whatsapp.com/";
             Thread.Sleep(150);
+            
         }
 
         private void openChat(string contactName)
@@ -45,7 +46,11 @@ namespace ZapBot
                     newChatBox.Click();
                     break;
                 }
-                catch (Exception ex){ Thread.Sleep(50); }
+                catch (Exception ex)
+                {
+                    Thread.Sleep(50);
+                    throw new Exception(ex.Message);
+                }
             }
             while (true)
             {
@@ -53,11 +58,16 @@ namespace ZapBot
                 {
                     var searchBar = driver.FindElement(By.CssSelector($"div[data-testid='chat-list-search']"));
                     searchBar.SendKeys(contactName);
+                    Thread.Sleep(70);
                     searchBar.SendKeys(OpenQA.Selenium.Keys.Enter);
                     break;
                 }
-                catch (Exception ex) { Thread.Sleep(50); }
-             }
+                catch (Exception ex)
+                {
+                    Thread.Sleep(50);
+                    throw new Exception(ex.Message);
+                }
+            }
 
         }
 
@@ -67,29 +77,54 @@ namespace ZapBot
             {
                 try
                     {
-
-                        var textBar = driver.FindElement(By.ClassName(("p3_M1")));
+                        IWebElement textBar = driver.FindElement(By.XPath("//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p"));
                         textBar.SendKeys(message);
-                        var sendButton = driver.FindElement(By.CssSelector("span[data-testid='send']"));
+
+                        IWebElement sendButton = driver.FindElement(By.CssSelector("span[data-testid='send']"));
                         sendButton.Click();
                         break;
                     }
-            catch (Exception ex) { Thread.Sleep(50); }
+                catch (Exception ex)
+                {
+                    Thread.Sleep(50);
+                }
 
             }
 
         }
 
-
+        private void checksIfPageHasLoaded()
+        {
+            try
+            {
+                // Seleciona a barra de pesquisa. 
+                driver.FindElement(By.XPath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]/p"));
+                
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    // Seleciona o botão de nova mensagem.
+                    driver.FindElement(By.XPath("//*[@id=\"app\"]/div/div/div[4]/header/div[2]/div/span/div[3]/div/span")).Click();
+                }
+                catch (Exception)
+                {
+                    driver.Navigate().Refresh();
+                    throw new Exception("A página não foi carregada corretamente. Tentando recarregar a página...");
+                }
+            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            checksIfPageHasLoaded();
             string message = textBoxMensagem.Text;
             string contact = textBoxContato.Text;
 
             
             openChat(contact);
+            
             sendMessage(message);
             
         }
